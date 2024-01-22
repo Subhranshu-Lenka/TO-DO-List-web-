@@ -23,6 +23,7 @@ function addTask() {
     }
 
     inputBox.value = "";
+    saveData()
 }
 
 listContainer.addEventListener("click", (e) => {
@@ -32,4 +33,15 @@ listContainer.addEventListener("click", (e) => {
     else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
     }
-})
+    saveData()
+});
+
+function saveData() {
+    localStorage.setItem("data", listContainer.innerHTML);
+}
+
+function reloadData() {
+    listContainer.innerHTML = localStorage.getItem("data");
+}
+
+reloadData();

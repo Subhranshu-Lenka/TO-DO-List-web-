@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    color: rgb(52, 52, 52);
 }
 
 .container {
@@ -82,10 +83,19 @@ ul li::before {
     height: 22px;
     width: 22px;
     border-radius: 50%;
-    border: 1.5px solid rgba(0, 0, 0, 0.3);
+    /* border: 1.5px solid rgba(0, 0, 0, 0.3); */
     background-image: url(./images/unchecked.png);
     background-size: cover;
     background-position: center;
     left: 20px;
     top: 8px;
+}
+
+li.checked {
+    text-decoration: line-through;
+    color: gray;
+}
+
+li.checked::before {
+    background-image: url(./images/checked.png);
 }
